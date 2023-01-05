@@ -1,4 +1,4 @@
-class MoviesController < ApplicationController
+class FilmsController < ApplicationController
     def index
       @favorite_movies = Film.all
     end
