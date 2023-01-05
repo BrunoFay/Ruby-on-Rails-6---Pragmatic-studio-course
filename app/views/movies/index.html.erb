@@ -7,7 +7,8 @@ favorite films:
     <li>
     <strong>Name: <%= movie.name %></strong> </br>
     <span>Year: <%= movie.year %></span> </br>
-    <span>Price: <%= number_to_currency(movie.price) %></span>
+    <p> Sinopse: <%= truncate(movie.description,length:40,separator: ' ') %> </p>
+    <span>Price: <%= isMovieFlop(movie) %></span>
      </li>
   <% end %>
 </ul>
