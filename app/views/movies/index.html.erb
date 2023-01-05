@@ -6,7 +6,7 @@ favorite films:
    <section class="movie">
       <div class="summary">
          <h2>
-          <%= movie.name %>
+         <%= link_to movie.name, movie_path(movie) %>
          </h2>
          <h3>
             <%= isMovieFlop(movie) %>
