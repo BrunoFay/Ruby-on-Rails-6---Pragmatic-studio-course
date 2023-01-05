@@ -16,6 +16,9 @@
 
     <section class="admin">
       <%= link_to "Edit",edit_film_path, class:"button" %>
+      <%= link_to "Delete", film_path, class:"button", method: :delete,
+      data:{ confirm:" are you sure?" }
+      %>
     </section>
   </div>
 </section>

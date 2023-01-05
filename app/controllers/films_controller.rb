@@ -20,10 +20,18 @@ class FilmsController < ApplicationController
 
     def new
       @movie = Film.new
+    end
 
     def create
      movie = Film.create(movie_params)
       redirect_to movie
+    end
+
+    def destroy
+      @movie = Film.find(params[:id])
+      @movie.destroy
+
+      redirect_to films_url
     end
 
   end
@@ -34,5 +42,5 @@ class FilmsController < ApplicationController
       .require(:film)
       .permit(:name, :description, :price, :rating, :released_on)
     end
-  end
+
 
