@@ -1,14 +1,19 @@
-<h1>My name is: <%= @name %></h1>
-<h2> my age is: <%= @age %></h2>
+<h3>My name is: <%= @name %></h3>
+<h3> my age is: <%= @age %></h3>
 
 favorite films:
-<ul>
  <% @favorite_movies.each do |movie| %>
-    <li>
-    <strong>Name: <%= movie.name %></strong> </br>
-    <span>Year: <%= movie.year %></span> </br>
-    <p> Sinopse: <%= truncate(movie.description,length:40,separator: ' ') %> </p>
-    <span>Price: <%= isMovieFlop(movie) %></span>
-     </li>
+   <section class="movie">
+      <div class="summary">
+         <h2>
+          <%= movie.name %>
+         </h2>
+         <h3>
+            <%= isMovieFlop(movie) %>
+         </h3>
+         <p>
+            <%= truncate(movie.description, length: 150, separator: ' ') %>
+         </p>
+      </div>
+   </section>
   <% end %>
-</ul>

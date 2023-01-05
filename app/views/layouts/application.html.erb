@@ -11,6 +11,15 @@
   </head>
 
   <body>
+  <header>
+  <%= image_tag("logo") %>
+  </header>
     <%= yield %>
+    <footer>
+    <p>
+      Copyright &copy
+      <%= Time.now.year %>
+    </p>
+    </footer>
   </body>
 </html>
