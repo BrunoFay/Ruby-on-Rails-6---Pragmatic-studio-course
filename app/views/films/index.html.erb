@@ -1,15 +1,22 @@
- <% @favorite_movies.each do |movie| %>
-   <section class="movie">
-      <div class="summary">
-         <h2>
-         <%= link_to movie.name, film_path(movie) %>
-         </h2>
-         <h3>
-            <%= isMovieFlop(movie) %>
-         </h3>
-         <p>
-            <%= truncate(movie.description, length: 150, separator: ' ') %>
-         </p>
-      </div>
+<div>
+   <% @favorite_movies.each do |movie| %>
+      <section class="movie">
+         <div class="summary">
+            <h2>
+               <%= link_to movie.name, film_path(movie) %>
+            </h2>
+            <h3>
+               <%= isMovieFlop(movie) %>
+            </h3>
+            <p>
+               <%= truncate(movie.description, length: 150, separator: ' ') %>
+            </p>
+         </div>
+      </section>
+   <% end %>
+
+   <section class="admin">
+      <%= link_to "Create Movie",new_film_path, class:"button"%>
    </section>
-  <% end %>
+
+   </div>
