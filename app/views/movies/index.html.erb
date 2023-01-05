@@ -1,0 +1,13 @@
+<h1>My name is: <%= @name %></h1>
+<h2> my age is: <%= @age %></h2>
+
+favorite films:
+<ul>
+ <% @favorite_movies.each do |movie| %>
+    <li>
+    <strong>Name: <%= movie.name %></strong> </br>
+    <span>Year: <%= movie.year %></span> </br>
+    <span>Price: <%= number_to_currency(movie.price) %></span>
+     </li>
+  <% end %>
+</ul>
