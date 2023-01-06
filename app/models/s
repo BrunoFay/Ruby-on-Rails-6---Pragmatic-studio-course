@@ -1,0 +1,9 @@
+ movie = Film.new
+ movie.name = "Hulk"
+ movie.description = "Bruce Banner transforms into a raging green monster when he gets angry."
+ movie.released_on = "2003-06-20"
+ movie.duration = "138 min"
+ movie.price = 113_107_712
+ movie.image_file_name = "hulk.png"
+ movie.rating = "PG-13
+ movie.save

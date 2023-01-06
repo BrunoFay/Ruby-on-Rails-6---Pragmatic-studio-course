@@ -6,7 +6,7 @@
   <%= f.date_select :released_on, {}, {class: "date"} %>
 
   <%= f.label :rating %>
-  <%= f.text_field :rating %>
+  <%= f.select :rating, Film::RATINGS, prompt: "Pick one" %>
 
 
   <%= f.label :description %>
