@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_06_130152) do
+ActiveRecord::Schema.define(version: 2023_01_06_160945) do
 
   create_table "films", force: :cascade do |t|
     t.string "name"
@@ -27,4 +27,16 @@ ActiveRecord::Schema.define(version: 2023_01_06_130152) do
     t.string "image_file_name", default: "placeholder.png"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "name"
+    t.integer "stars"
+    t.text "comment"
+    t.string "text"
+    t.integer "film_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["film_id"], name: "index_reviews_on_film_id"
+  end
+
+  add_foreign_key "reviews", "films"
 end
