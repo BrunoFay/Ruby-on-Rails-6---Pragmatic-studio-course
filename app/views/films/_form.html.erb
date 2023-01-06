@@ -1,4 +1,7 @@
 <%= form_with(model: movie,local:true) do |f|%>
+
+  <%= render "shared/errors_messages", object: movie %>
+
   <%= f.label :name %>
   <%= f.text_field :name, autofocus: true %>
 

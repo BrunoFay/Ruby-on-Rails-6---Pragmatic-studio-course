@@ -1,5 +1,5 @@
 class Film < ApplicationRecord
-  validates :title, :released_on, :duration, presence:true
+  validates :name, :released_on, :duration, presence: true
   validates :description, length: { minimum: 25 }
   validates :price, numericality: { greater_than_or_equal_to: 0 }
   validates :image_file_name, format: {
