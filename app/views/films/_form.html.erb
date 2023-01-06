@@ -12,8 +12,17 @@
   <%= f.label :description %>
   <%= f.text_area :description, rows: 7 %>
 
+  <%= f.label :director %>
+  <%= f.text_field :director %>
+
+  <%= f.label :duration %>
+  <%= f.text_field :duration %>
+
   <%= f.label :price %>
   <%= f.number_field :price %>
+
+  <%= f.label :image_file_name %>
+  <%= f.text_field :image_file_name %>
 
   <%= f.submit %>
 

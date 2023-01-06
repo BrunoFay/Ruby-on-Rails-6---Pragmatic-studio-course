@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 Film.create!([
   {
     name: 'Avengers: Endgame',
@@ -17,7 +9,10 @@ Film.create!([
     }.squish,
     released_on: "2019-04-26",
     rating: 'PG-13',
-    price: 1_223_641_414
+    price: 1_223_641_414,
+    director: 'Anthony Russo',
+    duration: '181 min',
+    image_file_name: 'avengers-end-game.png'
   },
   {
     name: 'Captain Marvel',
@@ -27,7 +22,10 @@ Film.create!([
     }.squish,
     released_on: "2019-03-08",
     rating: 'PG-13',
-    price: 1_110_662_849
+    price: 1_110_662_849,
+    director: 'Anna Boden',
+    duration: '124 min',
+    image_file_name: 'captain-marvel.png'
   },
   {
     name: 'Black Panther',
@@ -37,7 +35,10 @@ Film.create!([
     }.squish,
     released_on: "2018-02-16",
     rating: 'PG-13',
-    price: 1_346_913_161
+    price: 1_346_913_161,
+    director: 'Ryan Coogler',
+    duration: '134 min',
+    image_file_name: 'black-panther.png'
   },
   {
     name: 'Avengers: Infinity War',
@@ -47,7 +48,10 @@ Film.create!([
     }.squish,
     released_on: "2018-04-27",
     rating: 'PG-13',
-    price: 2_048_359_754
+    price: 2_048_359_754,
+    director: 'Anthony Russo',
+    duration: '149 min',
+    image_file_name: 'avengers-infinity-war.png'
   },
   {
     name: 'Green Lantern',
@@ -57,7 +61,10 @@ Film.create!([
     }.squish,
     released_on: "2011-06-17",
     rating: 'PG-13',
-    price: 219_851_172
+    price: 219_851_172,
+    director: 'Martin Campbell',
+    duration: '114 min',
+    image_file_name: 'green-lantern.png'
   },
   {
     name: 'Fantastic Four',
@@ -67,7 +74,10 @@ Film.create!([
     }.squish,
     released_on: "2015-08-07",
     rating: 'PG-13',
-    price: 168_257_860
+    price: 168_257_860,
+    director: 'Josh Trank',
+    duration: '100 min',
+    image_file_name: 'fantastic-four.png'
   },
   {
     name: 'Iron Man',
@@ -79,7 +89,10 @@ Film.create!([
     }.squish,
     released_on: "2008-05-02",
     rating: 'PG-13',
-    price: 585_366_247
+    price: 585_366_247,
+    director: 'Jon Favreau',
+    duration: '126 min',
+    image_file_name: 'ironman.png'
   },
   {
     name: 'Superman',
@@ -91,7 +104,10 @@ Film.create!([
     }.squish,
     released_on: "1978-12-15",
     rating: 'PG',
-    price: 300_451_603
+    price: 300_451_603,
+    director: 'Richard Donner',
+    duration: '143 min',
+    image_file_name: 'superman.png'
   },
   {
     name: 'Spider-Man',
@@ -104,7 +120,10 @@ Film.create!([
     }.squish,
     released_on: "2002-05-03",
     rating: 'PG-13',
-    price: 825_025_036
+    price: 825_025_036,
+    director: 'Sam Raimi',
+    duration: '121 min',
+    image_file_name: 'spiderman.png'
   },
   {
     name: 'Batman',
@@ -115,7 +134,10 @@ Film.create!([
     }.squish,
     released_on: "1989-06-23",
     rating: 'PG-13',
-    price: 411_348_924
+    price: 411_348_924,
+    director: 'Tim Burton',
+    duration: '126 min',
+    image_file_name: 'batman.png'
   },
   {
     name: "Catwoman",
@@ -125,7 +147,10 @@ Film.create!([
     }.squish,
     released_on: "2004-07-23",
     rating: "PG-13",
-    price: 82_102_379
+    price: 82_102_379,
+    director: "Jean-Christophe 'Pitof' Comar",
+    duration: "101 min",
+    image_file_name: "catwoman.png"
   },
   {
     name: "Wonder Woman",
@@ -135,6 +160,9 @@ Film.create!([
     }.squish,
     released_on: "2017-06-02",
     rating: "PG-13",
-    price: 821_847_012
+    price: 821_847_012,
+    director: "Patty Jenkins",
+    duration: "141 min",
+    image_file_name: "wonder-woman.png"
   }
 ])

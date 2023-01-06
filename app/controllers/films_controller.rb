@@ -1,6 +1,6 @@
 class FilmsController < ApplicationController
     def index
-      @favorite_movies = Film.all
+      @favorite_movies = Film.released
     end
 
     def show
@@ -40,7 +40,16 @@ class FilmsController < ApplicationController
     def movie_params
       params
       .require(:film)
-      .permit(:name, :description, :price, :rating, :released_on)
+      .permit(
+          :name,
+          :description,
+          :price,
+          :rating,
+          :released_on,
+          :duration,
+          :director,
+          :image_file_name  
+          )
     end
 
 
