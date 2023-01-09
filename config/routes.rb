@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  root "films#index"
   resources :films do
     resources :reviews
   end
 
-  root "films#index"
-  resources :films
+  resources :users
+  get "signup" => "users#new"
+
 end
