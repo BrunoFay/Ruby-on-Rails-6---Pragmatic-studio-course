@@ -8,21 +8,28 @@
     <h2>
       <%= movie_year(@movie) %> &bull <%= @movie.rating %>
     </h2>
-    <div class="reviews">
-    <%= link_to pluralize(@movie.reviews.size, "review"), film_reviews_path(@movie) %>
-    </div>
+
+    <span class="stars">
+    <%= average_stars(@movie) %>
+    </span>
+
+
     <p>
-      <%= @movie.description %>
+
+    <%= truncate(@movie.description, length: 150, separator: ' ') %>
+
     </p>
+
     <table>
       <tr>
         <th>Total Gross:</th>
         <td><%= isMovieFlop(@movie) %></td>
       </tr>
     </table>
+
     <%= link_to "Write Review", new_film_review_path(@movie),
     class: "review" %>
-     
+
     <section class="admin">
       <%= link_to "Edit",edit_film_path, class:"button" %>
       <%= link_to "Delete", film_path, class:"button", method: :delete,

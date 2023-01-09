@@ -13,4 +13,16 @@ module MoviesHelper
 
   end
 
+  def average_stars(movie)
+    if movie.average_stars.zero?
+      content_tag(:strong, "No reviews")
+    else
+      pluralize(number_with_precision(movie.average_stars, precision: 1) , "star")
+    end
+  end
+
+  def average_stars_as_percent
+    (self.average_stars / 5.0) * 100
+  end
+
 end
