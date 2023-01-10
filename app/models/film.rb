@@ -5,7 +5,7 @@ class Film < ApplicationRecord
   has_many :characterizations, dependent: :destroy
   has_many :genres, through: :characterizations
 
-  validates :name, :released_on, :duration, presence: true
+  validates :name, :released_on, :duration, presence: true, uniqueness: true
   validates :description, length: { minimum: 25 }
   validates :price, numericality: { greater_than_or_equal_to: 0 }
   validates :image_file_name, format: {
@@ -16,9 +16,11 @@ class Film < ApplicationRecord
   RATINGS = %w(G PG PG-13 R NC-17)
   validates :rating, inclusion: { in: RATINGS }
 
-  def self.released
-    where("released_on < ?", Time.now).order("released_on desc")
-  end
+  scope :released,-> { where("released_on < ?", Time.now).order("released_on desc") }
+  scope :upcoming,-> { where("released_on > ?", Time.now).order("released_on desc") }
+  scope :recent, -> (max=5) { released.limit(max) }
+  scope :hits, -> { released.where("price >= 300000000").order(price: :desc) }
+  scope :flops, -> { released.where("price < 22500000").order(price: :asc) }
 
   def average_stars
     reviews.average(:stars) || 0.0
