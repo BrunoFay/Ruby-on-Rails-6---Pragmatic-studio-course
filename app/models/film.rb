@@ -1,7 +1,8 @@
 class Film < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  
+  has_many :fans , through: :favorites, source: :user
+
   validates :name, :released_on, :duration, presence: true
   validates :description, length: { minimum: 25 }
   validates :price, numericality: { greater_than_or_equal_to: 0 }
