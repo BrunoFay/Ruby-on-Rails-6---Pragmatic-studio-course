@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_09_205408) do
+ActiveRecord::Schema.define(version: 2023_01_10_130205) do
 
   create_table "films", force: :cascade do |t|
     t.string "name"
@@ -28,13 +28,13 @@ ActiveRecord::Schema.define(version: 2023_01_09_205408) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "name"
     t.integer "stars"
     t.text "comment"
     t.string "text"
     t.integer "film_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
     t.index ["film_id"], name: "index_reviews_on_film_id"
   end
 
