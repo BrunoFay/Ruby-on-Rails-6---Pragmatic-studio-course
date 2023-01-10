@@ -8,6 +8,7 @@ class FilmsController < ApplicationController
 
     def show
       @movie = Film.find(params[:id])
+      @genres = @movie.genres.order(:name)
       @fans = @movie.fans
       if current_user
         @favorite = current_user.favorites.find_by(film_id: @movie.id)
@@ -65,7 +66,8 @@ class FilmsController < ApplicationController
           :released_on,
           :duration,
           :director,
-          :image_file_name
+          :image_file_name,
+          genre_ids: []
           )
     end
 

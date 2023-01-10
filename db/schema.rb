@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_10_143212) do
+ActiveRecord::Schema.define(version: 2023_01_10_174252) do
+
+  create_table "characterizations", force: :cascade do |t|
+    t.integer "film_id", null: false
+    t.integer "genre_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["film_id"], name: "index_characterizations_on_film_id"
+    t.index ["genre_id"], name: "index_characterizations_on_genre_id"
+  end
 
   create_table "favorites", force: :cascade do |t|
     t.integer "film_id", null: false
@@ -36,6 +45,12 @@ ActiveRecord::Schema.define(version: 2023_01_10_143212) do
     t.string "image_file_name", default: "placeholder.png"
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "stars"
     t.text "comment"
@@ -57,6 +72,8 @@ ActiveRecord::Schema.define(version: 2023_01_10_143212) do
     t.boolean "admin", default: false
   end
 
+  add_foreign_key "characterizations", "films"
+  add_foreign_key "characterizations", "genres"
   add_foreign_key "favorites", "films"
   add_foreign_key "favorites", "users"
   add_foreign_key "reviews", "films"
