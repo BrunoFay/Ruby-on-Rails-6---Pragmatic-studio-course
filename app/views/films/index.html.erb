@@ -18,8 +18,10 @@
       </section>
    <% end %>
 
+   <% if current_user_admin? %>
    <section class="admin">
       <%= link_to "Create Movie",new_film_path, class:"button"%>
    </section>
+   <% end %>
 
    </div>

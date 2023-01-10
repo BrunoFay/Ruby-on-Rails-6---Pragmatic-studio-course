@@ -30,11 +30,13 @@
     <%= link_to "Write Review", new_film_review_path(@movie),
     class: "review" %>
 
+    <% if current_user_admin? %>
     <section class="admin">
       <%= link_to "Edit",edit_film_path, class:"button" %>
       <%= link_to "Delete", film_path, class:"button", method: :delete,
       data:{ confirm:" are you sure?" }
       %>
     </section>
-  </div>
+    <% end %>
+    </div>
 </section>
