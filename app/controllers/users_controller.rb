@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = set_user
     @reviews = @user.reviews
-    
+
   end
 
   def new
