@@ -81,7 +81,7 @@ class FilmsController < ApplicationController
           :released_on,
           :duration,
           :director,
-          :image_file_name,
+          :main_image,
           genre_ids: []
           )
     end

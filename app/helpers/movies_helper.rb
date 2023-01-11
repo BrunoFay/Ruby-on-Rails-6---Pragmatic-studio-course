@@ -8,9 +8,17 @@ module MoviesHelper
 
   end
 
-  def movie_year (movie)
+  def movie_year(movie)
     movie.released_on.strftime("%Y")
 
+  end
+
+  def main_image(movie)
+    if movie.main_image.attached?
+      image_tag movie.main_image.variant(resize_to_limit: [150, nil])
+    else
+      image_tag "placeholder.png"
+    end
   end
 
   def nav_link_to(text, url)
